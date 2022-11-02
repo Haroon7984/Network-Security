@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+string encrypt(string &inp){
+    string res=inp;
+    int i=0;
+    for(char c:inp){
+        res[i]=c+3;
+        i++;
+    }
+    return res;
+}
+
+string decrypt(string &inp){
+    string res=inp;
+    int i=0;
+    for(char c:inp){
+        res[i]=c-3;
+        i++;
+    }
+    return res;
+}
+
+int main(){
+    string inp, enc, dec;
+    cout<<"Enter String: ";
+    getline(cin, inp);
+    enc=encrypt(inp);
+    dec=decrypt(enc);
+    cout<<"\nCipher: "<<enc;
+    cout<<"\nText: "<<dec;
+}
